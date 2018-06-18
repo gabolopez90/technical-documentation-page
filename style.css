@@ -1,0 +1,14 @@
+body{
+  margin-top: 2em;
+}
+
+.nav-link{
+  list-style: none;
+  color: rgb(33, 37, 41);
+}
+
+@media only screen and (max-width: 900px){
+  body{
+    margin-top: none;
+  }
+}
