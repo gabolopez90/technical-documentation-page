@@ -7,33 +7,159 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <aside class="col-xs-12 col-md-4 col-lg-4">
+        <aside class="col-xs-12 col-md-3 col-lg-3">
           <nav id="navbar">
             <header>
-              <h4>Technical Documentation Page</h4>
+              <h3 class="text-center">PHP</h3>
             </header>
-            <ul>
-              <a href="#main" class="nav-link"><li>Main page</li></a>
-              <a href="#article1" class="nav-link"><li>Article 1</li></a>
-              <a href="#article2" class="nav-link"><li>Article 2</li></a>
-              <a href="#article3" class="nav-link"><li>Article 3</li></a>
+            <ul id="nav-list">
+              <a href="#introduction" class="nav-link"><li>Introduction</li></a>
+              <hr />
+              <a href="#what_can_php_do" class="nav-link"><li>What can PHP do?</li>
+              </a>
+              <hr />
+              <a href="#your_first_php_enabled_page" class="nav-link"><li>Your first PHP-enabled page</li></a>
+              <hr />
+              <a href="#something_useful" class="nav-link"><li>Something Useful</li></a>
+              <hr />
+              <a href="#why_php" class="nav-link"><li>Why PHP?</li></a>
+              <hr />
             </ul>
           </nav>
         </aside>
 
-        <div class="col-xs-12 col-md-8 col-lg-8">
-        <main ="main-doc">
-          <section class="main-section" id="article_1">
+        <div class="col-xs-12 col-md-9 col-lg-9">
+        <main id="main-doc">
+          <section class="main-section" id="introduction">
             <header>
-              <h2>Article 1</h2>
+              <h2>Introduction</h2>
             </header>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              PHP (recursive acronym for PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML. 
+            </p>
+            <pre>
+            <code>
+&lt;!DOCTYPE HTML&gt;
+&l;thtml&gt;
+&l;thead&gt;
+	&lt;title&gtExample&lt/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?php
+		echo "Hi, I'm a PHP script!";
+	?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code>
+            </pre>
+
+            <p>The best things in using PHP are that it is extremely simple for a newcomer, but offers many advanced features for a professional programmer. Don't be afraid reading the long list of PHP's features. You can jump in, in a short time, and start writing simple scripts in a few hours. </p>
+          </section>
+
+          <section class="main-section" id="what_can_php_do">
+            <header>
+              <h2>What can PHP do?</h2>
+            </header>
+            <p>
+            	Anything. PHP is mainly focused on server-side scripting, so you can do anything any other CGI program can do, such as collect form data, generate dynamic page content, or send and receive cookies. But PHP can do much more.
+            </p>
+            <p>
+				There are three main areas where PHP scripts are used. 
+            </p>
+            <ul>
+            	<li>Server-side scripting. This is the most traditional and main target field for PHP. You need three things to make this work: the PHP parser (CGI or server module), a web server and a web browser. You need to run the web server, with a connected PHP installation. You can access the PHP program output with a web browser, viewing the PHP page through the server. All these can run on your home machine if you are just experimenting with PHP programming. See the installation instructions section for more information. </li>
+            	<li>Command line scripting. You can make a PHP script to run it without any server or browser. You only need the PHP parser to use it this way. This type of usage is ideal for scripts regularly executed using cron (on *nix or Linux) or Task Scheduler (on Windows). These scripts can also be used for simple text processing tasks. See the section about Command line usage of PHP for more information. </li>
+            	<li>Writing desktop applications. PHP is probably not the very best language to create a desktop application with a graphical user interface, but if you know PHP very well, and would like to use some advanced PHP features in your client-side applications you can also use PHP-GTK to write such programs. You also have the ability to write cross-platform applications this way. PHP-GTK is an extension to PHP, not available in the main distribution. If you are interested in PHP-GTK, visit » its own website. </li>
+            </ul>
+          </section>
+
+          <section class="main-section" id="your_first_php_enabled_page">
+            <header>
+              <h2>Your first PHP-enabled page</h2>
+            </header>
+            <p>
+              Create a file named hello.php and put it in your web server's root directory (DOCUMENT_ROOT) with the following content: 
             </p>
 
+            <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+	&l;ttitle&gt;PHP Test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;?php
+		echo '&lt;p&gt;Hello World&lt;/p&gt;'; 
+	?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <p>
+            	Use your browser to access the file with your web server's URL, ending with the /hello.php file reference. When developing locally this URL will be something like http://localhost/hello.php or http://127.0.0.1/hello.php but this depends on the web server's configuration. If everything is configured correctly, this file will be parsed by PHP and the following output will be sent to your browser: 
+            </p>
+
+            <pre><code>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;PHP Test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;p&gt;Hello World&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </code></pre>
+
+            <p>
+            	This program is extremely simple and you really did not need to use PHP to create a page like this. All it does is display: Hello World using the PHP echo statement. Note that the file does not need to be executable or special in any way. The server finds out that this file needs to be interpreted by PHP because you used the ".php" extension, which the server is configured to pass on to PHP. Think of this as a normal HTML file which happens to have a set of special tags available to you that do a lot of interesting things. 
+            </p>
           </section>
+
+          <section class="main-section" id="something_useful">
+            <header>
+              <h2>Something Useful</h2>
+            </header>
+            <p>
+              Let us do something more useful now. We are going to check what sort of browser the visitor is using. For that, we check the user agent string the browser sends as part of the HTTP request. This information is stored in a variable. Variables always start with a dollar-sign in PHP. The variable we are interested in right now is <code>$_SERVER['HTTP_USER_AGENT']</code>. 
+            </p>
+
+            <samp>
+            	Note:
+
+				$_SERVER is a special reserved PHP variable that contains all web server information. It is known as a superglobal. See the related manual page on superglobals for more information. These special variables were introduced in PHP » 4.1.0. Before this time, we used the older $HTTP_*_VARS arrays instead, such as $HTTP_SERVER_VARS. As of PHP 5.4.0 these older variables have been removed. (See also the note on old code.) 
+            </samp>
+
+            <p>
+            	To display this variable, you can simply do: 
+            </p>
+
+            <pre><code>            	
+&lt;?php
+	echo $_SERVER['HTTP_USER_AGENT'];
+?&gt;
+            </code></pre>
+
+            <p>A sample output of this script may be: </p>
+            <pre><code>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)</code></pre>
+
+
+          </section>
+
+          <section class="main-section" id="why_php">
+            <header>
+              <h2>Why PHP?</h2>
+            </header>
+            
+            <ul>
+            	<li>PHP runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
+            	<li>PHP is compatible with almost all servers used today (Apache, IIS, etc.)</li>
+            	<li>PHP supports a wide range of databases</li>
+            	<li>PHP is free. Download it from the official PHP resource: www.php.net</li>
+            	<li>PHP is easy to learn and runs efficiently on the server side</li>
+            </ul>
+          </section>
+
         </main>
       </div>
       </div>
