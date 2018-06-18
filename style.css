@@ -1,5 +1,5 @@
-body{
-  margin-top: 2em;
+aside{
+	padding-top: 2em;
 }
 
 .nav-link{
@@ -7,8 +7,40 @@ body{
   color: rgb(33, 37, 41);
 }
 
-@media only screen and (max-width: 900px){
-  body{
-    margin-top: none;
+main{
+	border-left: 1px solid rgb(33, 37, 41);
+	padding: 2em;
+	padding-top: 4em;
+}
+
+main section *{
+	margin-top: 2em;
+}
+
+nav{
+	position: fixed;
+	height: 100%;
+}
+
+@media only screen and (max-width: 1075px){
+  main{
+  	border: none;
+  	margin-left: 1em;
+  }
+  #nav-list{
+  	padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 769px){
+  main{
+  	border: none;
+  }
+  main section * {
+  	margin-top: none;  	
+  }
+  nav{
+  	position: static;
+  	height: auto;
   }
 }
